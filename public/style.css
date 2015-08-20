@@ -1,0 +1,31 @@
+  /*.div:hover{
+    background-color: #eee;
+  }*/
+
+#winnerdiv {
+cursor:pointer;
+}
+
+#winnerdiv:hover{
+  background-color: #eee;
+}
+
+.list-group-item:hover{
+  background-color: #eee; 
+}
+
+.input-group-addon{
+  border-radius: 0px;
+}
+
+.second-input-group-addon{
+  border-bottom-left-radius: 15px;
+}
+
+.list-group-item, .squareme{
+  border-radius: 0px !important;
+}
+
+/*.form-control{
+  border-radius: 0px;
+}*/

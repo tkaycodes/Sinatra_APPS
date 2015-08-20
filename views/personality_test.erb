@@ -1,0 +1,86 @@
+<h1 style="font-weight:200"> Personality Test </h1>
+<p>Whats your personality type? Answer three questions and find out!</p>
+<br>
+
+<form action="/results">
+
+  <ul class="list-group">
+
+    <!-- heading of item 1 -->
+    <li class="list-group-item">1.You work best:</li> 
+    <!-- first radio button option -->
+    <div class="input-group">
+          <!-- this span is for the addon feature to left(grey addition) -->
+          <span class="input-group-addon"> 
+          <!-- inside put radio button -->
+          <input type="radio" name="work" value="With Deadlines"></input>
+          </span>
+          <!-- regular input with set value -->
+          <input type="text" class="form-control squareme" aria-label="..." value="With Deadlines" ></input>
+    </div>
+    <!-- second radio button option -->
+    <div class="input-group">
+          <span class="input-group-addon second-input-group-addon">
+          <input type="radio" name="work" value="Without Deadlines"></input>
+          </span>
+          <input type="text" class="form-control squareme" aria-label="..." value="Without Deadlines">
+            
+          </input>
+    </div>
+    <br><br>
+    <!-- end of first item -->
+
+
+  
+    <!-- heading of item 2 -->
+    <li class="list-group-item">2.You consider yourself more:    </li>
+    <!-- first radio button option -->
+    <div class="input-group">
+          <span class="input-group-addon"> 
+          <input type="radio" name="consider" value="Rational">     
+          </input>
+          </span>
+          <input type="text" class="form-control squareme" aria-label="..." value="Rational" ></input>
+    </div>
+    <!-- second radio option -->
+    <div class="input-group">
+          <span class="input-group-addon second-input-group-addon">
+            <input type="radio" name="consider" value="Compassionate">  
+            </input>
+          </span>
+          <input type="text" class="form-control squareme" aria-label="..." value="Compassionate" >  
+          </input>
+    </div>
+    <br><br>
+    <!-- end of second item -->
+
+
+
+    <!-- heading of item 3 -->
+    <li class="list-group-item">3.You are more interested in:</li>
+    <!-- first radio button option -->
+    <div class="input-group">
+      <span class="input-group-addon">
+      <input type="radio" name="interest" value="Ideas">
+      </input>
+      </span>
+      <input type="text" class="form-control squareme" aria-label="..." value="Ideas" >
+      </input>
+    </div>
+    <!-- second radio button option -->
+    <div class="input-group">
+      <span class="input-group-addon second-input-group-addon" >
+      <input type="radio" name="interest" value="Facts">
+      </input>
+      </span>
+      <input type="text" class="form-control squareme" aria-label="..." value="Facts" >
+      </input>
+    </div>
+
+  </ul> <br>
+
+
+  <input type="submit" class="btn btn-primary btn-lg">
+
+</form>
+

@@ -1,0 +1,201 @@
+<h1 style="font-weight:200"> Personality Test </h1>
+<p>Whats your personality type? Take a look at your results below!</p>
+<br>
+
+<!-- You chose: -->
+
+<%#=params[:work]%>
+<%#=params[:consider]%>
+<%#=params[:interest]%>
+<!-- <br> -->
+
+<%if params[:work]=="With Deadlines" && params[:consider]=="Rational" && params[:interest]=="Ideas"%>
+<!-- YOU ARE RATIONAL -->
+<%@result="rational"%>
+
+<%elsif params[:work]=="With Deadlines" && params[:consider]=="Rational" && params[:interest]=="Facts"%>
+<!-- YOU ARE GUARDIAN -->
+<%@result="guardian"%>
+
+<%elsif params[:work]=="Without Deadlines" && params[:consider]=="Rational" && params[:interest]=="Ideas"%>
+<!-- YOU ARE RATIONAL -->
+<%@result="rational"%>
+
+<%elsif params[:work]=="Without Deadlines" && params[:consider]=="Rational" && params[:interest]=="Facts"%>
+<!-- YOU ARE ARTISAN -->
+<%@result="artisan"%>
+
+<%elsif params[:work]=="With Deadlines" && params[:consider]=="Compassionate" && params[:interest]=="Ideas"%>
+<!-- YOU ARE IDEALIST -->
+<%@result="idealist"%>
+
+<%elsif params[:work]=="With Deadlines" && params[:consider]=="Compassionate" && params[:interest]=="Facts"%>
+<!-- YOU ARE GUARDIAN -->
+<%@result="guardian"%>
+
+<%elsif params[:work]=="Without Deadlines" && params[:consider]=="Compassionate" && params[:interest]=="Ideas"%>
+<!-- YOU ARE IDEALIST -->
+<%@result="idealist"%>
+
+<%elsif params[:work]=="With Deadlines" && params[:consider]=="Compassionate" && params[:interest]=="Facts"%>
+<!-- YOU ARE GUARDIAN -->
+<%@result="guardian"%>
+<%end%>
+
+
+<%if @result=="idealist"%>
+<div class="row">
+  <div class="col-sm-6">
+<img src="idealist.jpg">
+</div>
+
+<div class="col-sm-6" style="vertical-align:middle">
+
+<h1 style="font-weight:200;letter-spacing:2px;">Idealist</h1><br>
+<p style=" text-align:justify;
+    text-justify:inter-word;line-height:2">
+You are a passionate, caring, and unique person.
+You are good at expressing yourself and sharing your ideals.
+
+You are the most compassionate of all types and connect with others easily.
+Your heart tends to rule you. You can't make decisions without considering feelings.
+
+You seek out other empathetic people to befriend.
+Truth and authenticity matters in your friendships.
+
+In love, you give everything you have to relationships. You fall in love easily.
+
+At work, you crave personal expression and meaning in your career.
+
+With others, you communicate well. You can spend all night talking with someone.
+
+As far as your looks go, you've likely taken the time to develop your own personal style.
+
+On weekends, you like to be with others. Charity work is also a favorite pastime of yours.
+</p>
+</div>
+</div>
+
+<%elsif @result=="guardian"%>
+<div class="row">
+  <div class="col-sm-6">
+<img src="guardian.jpg">
+</div>
+
+<div class="col-sm-6" style="vertical-align:middle">
+
+<h1 style="font-weight:200;letter-spacing:2px;">Guardian</h1> <br>
+<p style=" text-align:justify;
+    text-justify:inter-word;line-height:2">
+You are sensible, down to earth, and goal oriented.
+Bottom line, you are good at playing by the rules.
+
+You tend to be dominant - and you are a natural leader.
+You are interested in rules and order. Morals are important to you.
+
+A hard worker, you give your all at whatever you do.
+You're very serious, and people often tell you to lighten up.
+
+In love, you tend to take things carefully and slowly.
+
+At work, you are suited to almost any career - but you excel in leadership positions.
+
+With others, you tend to be polite and formal.
+
+As far as looks go, you are traditionally attractive. You take good care of yourself.
+
+On weekends, you tend to like to do organized activities. In fact, you often organize them!
+</p>
+</div>
+</div>
+
+
+
+<%elsif @result=="artisian"%>
+
+<div class="row">
+  <div class="col-sm-6">
+<img src="artisian.jpg">
+</div>
+
+<div class="col-sm-6" style="vertical-align:middle">
+
+<h1 style="font-weight:200;letter-spacing:2px;">Artisian</h1>  <br>
+<p style=" text-align:justify;
+    text-justify:inter-word;line-height:2">
+You are both grounded and flexible. You adapt well to new situations.
+You are playful and free spirited - but you are also dependable and never flaky.
+
+You don't do well in conservative, stuffy situations.
+It's probably very hard for you to keep a normal job or stay in school.
+
+You are always up for fun and adventure. Most people are too boring for you.
+You take risks and bend the rules. And if things don't work out, you chock it up to life experience.
+
+In love, you tend to take things quickly - but you have a huge problem with commitment.
+
+At work, you need to make your own rules. You're best suited to be an entrepreneur.
+
+With others, you are animated and physical. You prefer doing something with friends to just hanging out.
+
+As far as your looks go, you tend to be buff and in good shape. Your spend more time on your body than your clothes.
+
+On weekends, you need to keep active. From cooking up a storm to running a 5K, you wear yourself out.
+</p>
+</div>
+</div>
+
+<%elsif @result=="rational"%>
+
+
+<div class="row">
+  <div class="col-sm-6">
+<img src="rational.jpg">
+</div>
+
+<div class="col-sm-6" style="vertical-align:middle">
+
+<h1 style="font-weight:200;letter-spacing:2px;">Rational</h1><br>
+<p style=" text-align:justify;
+    text-justify:inter-word;line-height:2">
+
+You are both logical and creative. You are full of ideas.
+You are so rational that you analyze everything. This drives people a little crazy!
+
+Intelligence is important to you. You always like to be around smart people.
+In fact, you're often a little short with people who don't impress you mentally.
+
+You seem distant to some - but it's usually because you're deep in thought.
+Those who understand you best are fellow Rationals.
+
+In love, you tend to approach things with logic. You seek a compatible mate - who is also very intelligent.
+
+At work, you tend to gravitate toward idea building careers - like programming, medicine, or academia.
+
+With others, you are very honest and direct. People often can't take your criticism well.
+
+As far as your looks go, you're coasting on what you were born with. You think fashion is silly.
+
+On weekends, you spend most of your time thinking, experimenting with new ideas, or learning new things.
+</p>
+</div>
+</div>
+
+<%end%>
+
+
+<!-- With deadline | Rational  | Ideas > Rational
+
+With deadline | Rational  | Facts > Guardian
+
+Without deadline | Rational  | Ideas > Rational
+
+Without deadline | Rational  | Facts > Artisan
+
+With deadline | Compassionate  | Ideas > Idealist
+
+With deadline | Compassionate  | Facts > Guardian
+
+Without deadline | Compassionate  | Ideas > Idealist
+
+Without deadline | Compassionate  | Facts > Artisan -->

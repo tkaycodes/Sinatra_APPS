@@ -1,0 +1,14 @@
+<h1 style="font-weight:200"> Random Person Selector </h1>
+<p>Can't decide who you should vote for ? - Let this app decide !</p>
+<br>
+<hr>
+  
+<form action="random_person_selector">
+  <input name="p_names" class="form-control" placeholder="Enter participant names (seperated by commas)"></input>
+</form>
+
+<%if !@winner.empty?%>
+<div id="winnerdiv" style="border:1px solid #23527C;padding:10px 10px 10px 10px;border-radius:5px;">
+  <h3 style="font-weight:200;padding:0px;margin:0px;">Selected: <%=@winner%></h3>
+</div>
+<%end%>

@@ -1,0 +1,36 @@
+<html>
+
+  <head>
+    <script src="jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+    </script>
+    <link href="style.css" rel="stylesheet"></link>
+
+  </head>
+
+  <body>
+  <div class="container">
+
+    <nav class="navbar">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/random_person_selector">Random Person Selector</a>
+          </li>
+          <li>
+            <a href="/personality_test">Personality Test</a>
+          </li>
+        </ul>
+    </nav>
+
+      <div style="padding-left:15px;padding-right:15px;">
+        <%=yield%>   
+      </div>
+
+  </div>
+  </body>
+
+</html>
