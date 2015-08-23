@@ -9,8 +9,7 @@ end
 get '/random_person_selector' do 
   if params[:p_names]
     # get names
-    @name=params[:p_names]
-    @name.pick_random
+    pick_random(params[:p_names])
   else
     @winner = ""
   end
@@ -27,20 +26,66 @@ get '/results' do
 end
 
 get '/team_organizer' do 
+  if params[:people_names] && params[:number_of_teams]
+    names = params[:people_names]
+    sort_string(names)
+    puts "#{@list}"
+    puts "number of names entered: #{@list.length}"
+    teams = params[:number_of_teams]
+    puts "number of teams selected:#{teams}"
+    if @list.length%teams.to_i == 0
+      @eachteam = @list.length/teams.to_i
+      @teams = @list.each_slice(@eachteam).to_a
+      puts "here are the teams #{@teams}"
+    else
+      @eachteam = @list.length.divmod(teams.to_i)
+      # divmod returns array where array[0]=quotent, array[1]=remaineder
+      # @teams = @eachteam
+      @extras = @list.shift(@eachteam[1])
+      @whatsleft = @list
+      puts "#{@eachteam[0]}"
+      @teams = @whatsleft.each_slice(@eachteam[0]).to_a
+      # puts " here are the teams #{@teams}, but also #{@eachteam[1]} left over"
+      puts "here are the teams #{@teams}, here are the extras #{@extras}"
+
+      @extras.each do |x| 
+        @teams.sample.push(x)
+      end
+
+      puts "heres the final teams #{@teams}"
+    end
+
+  end
   erb :team_organizer
-  if params[:people_names]
-    @name = @name.s
+end
+
+
+# helper methods
+
+helpers do 
+  # converts string to array, picks a random array value
+  def pick_random(list)
+      # turn to array
+      list = list.split(',')
+      #remove all white trailing and leading whitespaces 
+      list = list.map{|x|x.strip}
+      #remove all empty strings
+      list = list.reject{|x|x.empty?}
+    @winner = list.sample
+  end
+
+  # converts string to array, formats it 
+  def sort_string(list)
+    # turn to array
+    list = list.split(',')
+    #remove all white trailing and leading whitespaces 
+    list = list.map{|x|x.strip}
+    #remove all empty strings
+    @list = list.reject{|x|x.empty?}
   end
 end
 
 
-def pick_random
-  # turn to array
-  @name = @name.split(',')
-  #remove all white trailing and leading whitespaces 
-  @name = @name.map{|x|x.strip}
-  #remove all empty strings
-  @name = @name.reject{|x|x.empty?}
-  @winner = @name.sample
-end
+
+
 

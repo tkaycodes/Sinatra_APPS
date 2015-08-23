@@ -7,3 +7,7 @@
   <input name="number_of_teams"class="form-control" placeholder="How many teams are you making?"><br>
   <input type="submit" class="btn btn-primary btn-large"></input>
 </form>
+
+<%if !params[:people_names].nil? && !params[:number_of_teams].nil?%>
+<%=@teams%>
+<%end%>

@@ -37,9 +37,9 @@
 <!-- YOU ARE IDEALIST -->
 <%@result="idealist"%>
 
-<%elsif params[:work]=="With Deadlines" && params[:consider]=="Compassionate" && params[:interest]=="Facts"%>
+<%elsif params[:work]=="Without Deadlines" && params[:consider]=="Compassionate" && params[:interest]=="Facts"%>
 <!-- YOU ARE GUARDIAN -->
-<%@result="guardian"%>
+<%@result="artisan"%>
 <%end%>
 
 
@@ -111,38 +111,20 @@ On weekends, you tend to like to do organized activities. In fact, you often org
 
 
 
-<%elsif @result=="artisian"%>
+<%elsif @result=="artisan"%>
 
 <div class="row">
   <div class="col-sm-6">
-<img src="artisian.jpg">
-</div>
-
-<div class="col-sm-6" style="vertical-align:middle">
-
-<h1 style="font-weight:200;letter-spacing:2px;">Artisian</h1>  <br>
-<p style=" text-align:justify;
-    text-justify:inter-word;line-height:2">
-You are both grounded and flexible. You adapt well to new situations.
-You are playful and free spirited - but you are also dependable and never flaky.
-
-You don't do well in conservative, stuffy situations.
-It's probably very hard for you to keep a normal job or stay in school.
-
-You are always up for fun and adventure. Most people are too boring for you.
-You take risks and bend the rules. And if things don't work out, you chock it up to life experience.
-
-In love, you tend to take things quickly - but you have a huge problem with commitment.
-
-At work, you need to make your own rules. You're best suited to be an entrepreneur.
-
-With others, you are animated and physical. You prefer doing something with friends to just hanging out.
-
-As far as your looks go, you tend to be buff and in good shape. Your spend more time on your body than your clothes.
-
-On weekends, you need to keep active. From cooking up a storm to running a 5K, you wear yourself out.
-</p>
-</div>
+    <img src="artisian.jpg">
+  </div>
+  <div class="col-sm-6">
+      <h1 style="font-weight:200;letter-spacing:2px;margin-bottom:0px;margin-top:0px;">Artisan</h1>  <br>
+      <p style=" text-align:justify;
+        text-justify:inter-word;line-height:2">
+        You are both grounded and flexible. You adapt well to new situations.You are playful and free spirited - but you are also dependable and never flaky.You don't do well in conservative, stuffy situations.It's probably very hard for you to keep a normal job or stay in school.You are always up for fun and adventure. Most people are too boring for you.You take risks and bend the rules. And if things don't work out, you chock it up to life experience.
+        In love, you tend to take things quickly - but you have a huge problem with commitment.At work, you need to make your own rules. You're best suited to be an entrepreneur.With others, you are animated and physical. You prefer doing something with friends to just hanging out.As far as your looks go, you tend to be buff and in good shape. Your spend more time on your body than your clothes.On weekends, you need to keep active. From cooking up a storm to running a 5K, you wear yourself out.
+        </p>
+  </div>
 </div>
 
 <%elsif @result=="rational"%>
