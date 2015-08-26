@@ -9,5 +9,26 @@
 </form>
 
 <%if !params[:people_names].nil? && !params[:number_of_teams].nil?%>
-<%=@teams%>
+<h4 style="font-weight:200">Check out your teams!</h4><br><br>
+
+
+
+<div class="row">
+  <%@teams.each_with_index do |team, index|%>
+  <div class="col-xs-6 col-md-3">
+    <div class="thumbnail" style="height:240px;background-color:#EEEEEE;text-align:center;overflow:scroll">
+      <span class="badge" style="margin-bottom:2px">Team <%=index+1%></span>
+      <ul class="list-group">
+        <%team.each do |x|%>
+          <li class="list-group-item" style="letter-spacing:2px">
+            <strong><%=x%></strong>
+          </li>
+        <%end%>
+      </ul>
+    </div>
+  </div>
+
+<%end%>
+</div>
+
 <%end%>
