@@ -14,20 +14,26 @@
 
 
 <div class="row">
-  <%@teams.each_with_index do |team, index|%>
-  <div class="col-xs-12 col-md-6">
-    <div class="thumbnail" style="height:300px;background-color:#EEEEEE;text-align:center;overflow:scroll">
-      <span class="badge" style="margin-bottom:10px">Team <%=index+1%></span>
-      <ul class="list-group">
-        <%team.each do |x|%>
-          <li class="list-group-item" style="letter-spacing:2px">
-            <strong><%=x%></strong>
-          </li>
-        <%end%>
-      </ul>
-    </div>
-  </div>
-
+  <!-- @teams dosnt exist -->
+  <%if @dividebyzero%>
+    Can't be dividing by zero - cmon now!
+  <%elsif @uneventeams%>
+    Num of teams has to be less than the num of ppl you enter!
+  <%else%>
+      <%@teams.each_with_index do |team, index|%>
+      <div class="col-xs-12 col-md-6">
+        <div class="thumbnail" style="height:300px;background-color:#EEEEEE;text-align:center;overflow:scroll">
+          <span class="badge" style="margin-bottom:10px">Team <%=index+1%></span>
+          <ul class="list-group">
+            <%team.each do |x|%>
+              <li class="list-group-item" style="letter-spacing:2px">
+                <strong><%=x%></strong>
+              </li>
+            <%end%>
+          </ul>
+        </div>
+      </div>
+    <%end%>
 <%end%>
 </div>
 

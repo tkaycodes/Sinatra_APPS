@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'shotgun'
 # require 'pony'
+require 'pry'
 
 get '/' do 
   erb :welcome
@@ -26,17 +27,24 @@ get '/results' do
 end
 
 get '/team_organizer' do 
+  # if user enters both team members and x number of teams
   if params[:people_names] && params[:number_of_teams]
     names = params[:people_names]
+    # sort_string is helper method - see below
     sort_string(names)
-    puts "#{@list}"
-    puts "number of names entered: #{@list.length}"
+    # binding.pry
     teams = params[:number_of_teams]
-    puts "number of teams selected:#{teams}"
-    if @list.length%teams.to_i == 0
+    if names.length < teams.to_i
+      @uneventeams = true;
+      # binding.pry
+    # if evenly divisible
+    elsif teams.to_i === 0
+      @dividebyzero = true;
+    elsif @list.length%teams.to_i == 0
       @eachteam = @list.length/teams.to_i
       @teams = @list.each_slice(@eachteam).to_a
       puts "here are the teams #{@teams}"
+    # if not evenly divisible
     else
       @eachteam = @list.length.divmod(teams.to_i)
       # divmod returns array where array[0]=quotent, array[1]=remaineder
@@ -56,6 +64,8 @@ get '/team_organizer' do
     end
 
   end
+  # end of if statement 
+
   erb :team_organizer
 end
 
